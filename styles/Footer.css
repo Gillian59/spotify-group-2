@@ -1,0 +1,27 @@
+#playerFooter {
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  color: white;
+  background-color: #282828;
+  width: 100%;
+  height: 90px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container button {
+  margin: 1vh;
+  height: 30%;
+}
+
+#songInformations p,
+#songInformations button {
+  margin: 1vh;
+}
