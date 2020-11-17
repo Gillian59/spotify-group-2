@@ -4,7 +4,7 @@ import useSWR from "swr";
 import { Layout } from "../components/Layout";
 
 type IndexProps = {
-  spotifyLoginUrl?: string;
+  spotifyLoginUrl: string;
 };
 
 const Index: React.FC<IndexProps> = ({ spotifyLoginUrl }) => {
