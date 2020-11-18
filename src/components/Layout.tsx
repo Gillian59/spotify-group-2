@@ -8,8 +8,8 @@ import Library from "../components/Library";
 type Props = {
   isLoggedIn: boolean;
   spotifyLoginUrl: string;
-  isDisplay: string;
-  setIsDisplay: any;
+  isDisplay?: string;
+  setIsDisplay?: any;
 };
 
 export const Layout: React.FC<Props> = ({ children, isLoggedIn, spotifyLoginUrl, isDisplay, setIsDisplay }) => {

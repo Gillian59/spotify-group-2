@@ -4,8 +4,8 @@ import Link from "next/link";
 type Props = {
   isLoggedIn?: boolean;
   spotifyLoginUrl?: string;
-  isDisplay: string;
-  setIsDisplay: any;
+  isDisplay?: string;
+  setIsDisplay?: any;
 };
 
 const NavBar: React.FC<Props> = ({ setIsDisplay }) => {
