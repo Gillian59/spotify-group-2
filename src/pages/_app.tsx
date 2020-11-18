@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import { SWRConfig } from "swr";
-import "../../styles/Footer.css";
-import "../style/global.css";
+import "../../public/styles/Footer.css";
+import "../../public/styles/Global.css";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
