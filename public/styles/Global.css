@@ -9,6 +9,7 @@
 nav {
   margin-left: 24px;
 }
+
 .liens {
   margin-top: 30px;
   width: 195px;
@@ -56,7 +57,7 @@ i {
   cursor: pointer;
 }
 main {
-  margin-left: 600px;
+  margin-left: 232px;
 }
 .navBarTop {
     color: white;
@@ -76,3 +77,4 @@ hr {
   font-size: 13px;
   overflow: scroll;
 }
+

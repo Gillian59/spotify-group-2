@@ -49,8 +49,9 @@ const next = (accessToken: string, deviceId: string): Promise<Response> => {
   });
 };
 
-const categorie = (accessToken: string): Promise<Response> => {
-  return fetch(`https://api.spotify.com/v1/browse/categories`, {
+const categorieAll = (accessToken: string): Promise<Response> => {
+  //return fetch(`https://api.spotify.com/v1/browse/categories/party`, {
+  return fetch(`https://api.spotify.com/v1/browse/categories?country=FR&limit=50`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${accessToken}`,
@@ -58,4 +59,4 @@ const categorie = (accessToken: string): Promise<Response> => {
   });
 };
 
-export { play, pause, addToQueue, previous, next, categorie };
+export { play, pause, addToQueue, previous, next, categorieAll };
