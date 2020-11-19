@@ -27,7 +27,7 @@ export const Search: React.FC<Props> = ({ accessToken }) => {
         {category
           ? category.categories.items.map((item) => {
               return (
-                <a href={item.href} key={item.id}>
+                <a href={"/" + item.name} key={item.id}>
                   <Card className="m-1 bg-dark text-white" style={{ width: "12rem", height: "18rem" }}>
                     <Card.Img variant="top" src={item.icons[0].url} />
                     <Card.Body className="text-center">
