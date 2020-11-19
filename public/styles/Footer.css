@@ -25,3 +25,31 @@
 #songInformations button {
   margin: 1vh;
 }
+
+.buttons {
+  cursor: pointer;
+  color: #e9e8e8;
+}
+
+.buttons:hover {
+  color: #e9e8e8;
+}
+
+#shuffleOff {
+  color: #1db954;
+}
+
+.posartinfos {
+  display: flex;
+  flex-direction: column;
+}
+
+#posnameart {
+  font-size: 13px;
+  color: #9c9c9c;
+}
+
+#albcover {
+  display: flex;
+  width: 76px;
+}

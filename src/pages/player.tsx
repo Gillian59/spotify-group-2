@@ -24,6 +24,8 @@ const Player: NextPage<Props> = ({ accessToken }) => {
   const [shuffle, setShuffle] = React.useState(false);
   const [repeatMode, setRepeatMode] = React.useState(1);
   const [isDisplay, setIsDisplay] = React.useState("");
+  const [artistName, setArtistName] = React.useState("");
+  const [cover, setcover] = React.useState("");
 
   React.useEffect(() => {
     const playerStateChanged = (state: SpotifyState) => {
@@ -32,6 +34,8 @@ const Player: NextPage<Props> = ({ accessToken }) => {
       setRepeatMode(state.repeat_mode);
       setCurrentTrack(state.track_window.current_track.name);
       setCurrentDuration(state.track_window.current_track.duration_ms);
+      setArtistName(state.track_window.current_track.artists[0].name);
+      setcover(state.track_window.current_track.album.images[0].url);
     };
     if (player) {
       player.addListener("player_state_changed", playerStateChanged);
@@ -59,52 +63,62 @@ const Player: NextPage<Props> = ({ accessToken }) => {
       <p>Welcome {user && user.display_name}</p>
       <footer id="playerFooter">
         <div className="container" id="songInformations">
-          <p>{currentTrack}</p>
+          <img id="albcover" src={cover}></img>
+          <div className="posartinfos">
+            <p>{currentTrack}</p>
+            <p id="posnameart">{artistName}</p>
+          </div>
           <p>{millisToMinutesAndSeconds(currentDuration)}</p>
-          <button
+          <a
+            className="buttons"
             onClick={() => {
               addToQueue(accessToken, deviceId);
             }}
           >
-            Add to queue
-          </button>
+            <i className="far fa-plus-square"></i>{" "}
+          </a>
         </div>
         <div className="container">
-          <button
+          <a
+            className="buttons"
             onClick={() => {
               setShuffle(!shuffle);
             }}
           >
-            {!shuffle ? "Shuffle OFF" : "Shuffle ON"}
-          </button>
-          <button
+            {!shuffle ? <i id="shuffleOff" className="fas fa-random"></i> : <i className="fas fa-random"></i>}
+          </a>
+          <a
+            className="buttons"
             onClick={() => {
               previous(accessToken, deviceId);
             }}
           >
-            Previous
-          </button>
-          <button
+            <i className="fas fa-step-backward"></i>
+          </a>
+          <a
+            className="buttons"
             onClick={() => {
               paused ? play(accessToken, deviceId) : pause(accessToken, deviceId);
             }}
           >
-            {paused ? "play" : "pause"}
-          </button>
-          <button
+            {paused ? <i className="fas fa-play"></i> : <i className="fas fa-pause"></i>}
+          </a>
+          <a
+            className="buttons"
             onClick={() => {
               next(accessToken, deviceId);
             }}
           >
-            next
-          </button>
-          <button
+            <i className="fas fa-step-forward"></i>
+          </a>
+          <a
+            className="buttons"
             onClick={() => {
               repeatMode === 2 ? setRepeatMode(0) : setRepeatMode(repeatMode + 1);
             }}
           >
-            Repeat Mode : {repeatMode}
-          </button>
+            <i className="fas fa-redo"></i> : {repeatMode}
+          </a>
         </div>
       </footer>
     </Layout>
