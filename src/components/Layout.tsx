@@ -4,6 +4,7 @@ import NavBar from "./NavBar";
 import { NavBarTop } from "./NavBarTop";
 import Search from "../components/Search";
 import Library from "../components/Library";
+import Home from "../components/Home";
 
 type Props = {
   isLoggedIn: boolean;
@@ -35,6 +36,7 @@ export const Layout: React.FC<Props> = ({
       <NavBarTop isLoggedIn={isLoggedIn} spotifyLoginUrl={spotifyLoginUrl} />
       <main className="mr-5">
         {children}
+        {isDisplay === "home" && <Home accessToken={accessToken} />}
         {isDisplay === "search" && <Search accessToken={accessToken} />}
         {isDisplay === "library" && <Library />}
       </main>

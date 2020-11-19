@@ -5,14 +5,15 @@ import { Layout } from "../components/Layout";
 
 type IndexProps = {
   spotifyLoginUrl: string;
+  accessToken: string;
 };
 
-const Index: React.FC<IndexProps> = ({ spotifyLoginUrl }) => {
+const Index: React.FC<IndexProps> = ({ spotifyLoginUrl, accessToken }) => {
   const { data, error } = useSWR("/api/get-user-info");
   const user = data;
   if (error) console.log("INDEX error= ", error);
   return (
-    <Layout isLoggedIn={user !== undefined} spotifyLoginUrl={spotifyLoginUrl}>
+    <Layout accessToken={accessToken} isLoggedIn={user !== undefined} spotifyLoginUrl={spotifyLoginUrl}>
       <h1>Home page</h1>
       <p>{user && user.display_name}</p>
     </Layout>
@@ -46,6 +47,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         "user-read-playback-state",
         "user-modify-playback-state",
         "streaming",
+        "user-read-recently-played",
       ].join(" "),
     );
 

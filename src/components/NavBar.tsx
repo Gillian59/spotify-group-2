@@ -33,14 +33,21 @@ const NavBar: React.FC<Props> = ({ setIsDisplay, isLoggedIn, accessToken }) => {
         <nav>
           <img id="logo" src="/images/logo.png" />
           <div className="liens">
-            <div className="lien">
-              <Link href="/">
-                <span className="CSSicons">
-                  <i className="fas fa-home"></i>
-                  Accueil
-                </span>
-              </Link>
-            </div>
+            {isLoggedIn && (
+              <div className="lien">
+                <Link href="/">
+                  <span
+                    className="CSSicons"
+                    onClick={() => {
+                      setIsDisplay("home");
+                    }}
+                  >
+                    <i className="fas fa-home"></i>
+                    Accueil
+                  </span>
+                </Link>
+              </div>
+            )}
             {isLoggedIn && (
               <div className="lien">
                 <Link href="/">

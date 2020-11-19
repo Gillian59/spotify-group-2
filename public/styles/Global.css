@@ -1,3 +1,9 @@
+#__next,
+html {
+  background-color: #131313;
+  color: white;
+}
+
 .nav {
   background-color: black;
   width: 232px;
@@ -60,17 +66,17 @@ main {
   margin-left: 232px;
 }
 .navBarTop {
-    color: white;
-    background-color: black;
-    width: 100%;
-    height: 60px;
-    font-size: 15px;
-    cursor: pointer;
-    padding-top: 18px;
+  color: white;
+  background-color: black;
+  width: 100%;
+  height: 60px;
+  font-size: 15px;
+  cursor: pointer;
+  padding-top: 18px;
 }
 
 hr {
-    background-color: gray;
+  background-color: #282828;
 }
 
 .playlistsList {
