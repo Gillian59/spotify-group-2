@@ -23,7 +23,7 @@ const Player: NextPage<Props> = ({ accessToken }) => {
   const [deviceId, player] = useSpotifyPlayer(accessToken);
   const [shuffle, setShuffle] = React.useState(false);
   const [repeatMode, setRepeatMode] = React.useState(1);
-  const [isDisplay, setIsDisplay] = React.useState("A modifier");
+  const [isDisplay, setIsDisplay] = React.useState("");
 
   React.useEffect(() => {
     const playerStateChanged = (state: SpotifyState) => {
@@ -48,7 +48,13 @@ const Player: NextPage<Props> = ({ accessToken }) => {
   const user = data;
 
   return (
-    <Layout isLoggedIn={true} spotifyLoginUrl="" isDisplay={isDisplay} setIsDisplay={setIsDisplay}>
+    <Layout
+      isLoggedIn={true}
+      spotifyLoginUrl=""
+      accessToken={accessToken}
+      isDisplay={isDisplay}
+      setIsDisplay={setIsDisplay}
+    >
       <h1>Player</h1>
       <p>Welcome {user && user.display_name}</p>
       <footer id="playerFooter">
