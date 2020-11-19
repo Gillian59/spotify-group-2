@@ -89,3 +89,112 @@ export type SpotifyCategory = {
     total: number;
   };
 };
+
+export type SpotifyRecentlyPlayed = {
+  items: [
+    {
+      track: {
+        album: {
+          album_type: string;
+          artists: [
+            {
+              external_urls: {
+                spotify: string;
+              };
+              href: string;
+              id: string;
+              name: string;
+              type: string;
+              uri: string;
+            },
+          ];
+          external_urls: {
+            spotify: string;
+          };
+          href: string;
+          id: string;
+          images: [
+            {
+              height: number;
+              url: string;
+              width: number;
+            },
+            {
+              height: number;
+              url: string;
+              width: number;
+            },
+            {
+              height: number;
+              url: string;
+              width: number;
+            },
+          ];
+          name: string;
+          release_date: string;
+          release_date_precision: string;
+          total_tracks: number;
+          type: string;
+          uri: string;
+        };
+        artists: [
+          {
+            external_urls: {
+              spotify: string;
+            };
+            href: string;
+            id: string;
+            name: string;
+            type: string;
+            uri: string;
+          },
+        ];
+        available_markets: [];
+        disc_number: number;
+        duration_ms: number;
+        explicit: boolean;
+        external_ids: {
+          isrc: string;
+        };
+        external_urls: {
+          spotify: string;
+        };
+        href: string;
+        id: string;
+        is_local: boolean;
+        is_playable: boolean;
+        name: string;
+        popularity: number;
+        preview_url: string;
+        track_number: number;
+        type: string;
+        uri: string;
+      };
+      played_at: string;
+      context: {
+        external_urls: {
+          spotify: string;
+        };
+        href: string;
+        type: string;
+        uri: string;
+      };
+    },
+  ];
+  next: string;
+  cursors: {
+    after: string;
+    before: string;
+  };
+  limit: number;
+  href: string;
+};
+
+// <a href={item.track.href} key={item.track.id}>
+//   <Card className="m-1 bg-dark text-white" style={{ width: "12rem" }}>
+//     <Card.Img variant="top" src={item.track.album.images[0].url} />
+//     <Card.Body className="text-center">
+//       <Card.Title className="h6">{item.track.artists[0].name}</Card.Title>
+//     </Card.Body>
+//   </Card>
+// </a>;
