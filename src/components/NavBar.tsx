@@ -90,6 +90,7 @@ const NavBar: React.FC<Props> = ({ setIsDisplay, isLoggedIn, accessToken }) => {
                 </span>
               </Link>
             </div>
+            <hr></hr>
           </div>
           {isLoggedIn && playlists && playlists.items && (
             <div className="playlistsList">

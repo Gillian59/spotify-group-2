@@ -49,4 +49,13 @@ const next = (accessToken: string, deviceId: string): Promise<Response> => {
   });
 };
 
-export { play, pause, addToQueue, previous, next };
+const categorie = (accessToken: string): Promise<Response> => {
+  return fetch(`https://api.spotify.com/v1/browse/categories`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+};
+
+export { play, pause, addToQueue, previous, next, categorie };

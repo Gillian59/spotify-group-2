@@ -17,13 +17,15 @@ export const Layout: React.FC<Props> = ({
   children,
   isLoggedIn,
   spotifyLoginUrl,
-  accessToken,
   isDisplay,
   setIsDisplay,
+  accessToken,
 }) => {
   return (
     <>
       <Head>
+        <title>MySpotify</title>
+        <link rel="icon" href="/images/spotifyicon.png" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
@@ -33,7 +35,7 @@ export const Layout: React.FC<Props> = ({
       <NavBarTop isLoggedIn={isLoggedIn} spotifyLoginUrl={spotifyLoginUrl} />
       <main className="mr-5">
         {children}
-        {isDisplay === "search" && <Search />}
+        {isDisplay === "search" && <Search accessToken={accessToken} />}
         {isDisplay === "library" && <Library />}
       </main>
     </>

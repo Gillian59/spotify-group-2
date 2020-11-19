@@ -68,3 +68,24 @@ export type SpotifyUser = {
   type?: string;
   uri?: string;
 };
+
+export type SpotifyCategory = {
+  categories: {
+    href: string;
+    items: {
+      href: string;
+      icons: {
+        height: number;
+        url: string;
+        width: number;
+      }[];
+      id: string;
+      name: string;
+    }[];
+    limit: number;
+    next: string;
+    offset: number;
+    previous?: string;
+    total: number;
+  };
+};

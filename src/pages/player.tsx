@@ -49,18 +49,16 @@ const Player: NextPage<Props> = ({ accessToken }) => {
 
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
-  const user = data;
+  //const user = data;
 
   return (
     <Layout
       isLoggedIn={true}
       spotifyLoginUrl=""
-      accessToken={accessToken}
       isDisplay={isDisplay}
       setIsDisplay={setIsDisplay}
+      accessToken={accessToken}
     >
-      <h1>Player</h1>
-      <p>Welcome {user && user.display_name}</p>
       <footer id="playerFooter">
         <div className="container" id="songInformations">
           <img id="albcover" src={cover}></img>

@@ -8,9 +8,9 @@ type IndexProps = {
 };
 
 const Index: React.FC<IndexProps> = ({ spotifyLoginUrl }) => {
-  const { data } = useSWR("/api/get-user-info");
+  const { data, error } = useSWR("/api/get-user-info");
   const user = data;
-
+  if (error) console.log("INDEX error= ", error);
   return (
     <Layout isLoggedIn={user !== undefined} spotifyLoginUrl={spotifyLoginUrl}>
       <h1>Home page</h1>
