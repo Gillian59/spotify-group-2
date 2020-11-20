@@ -13,6 +13,7 @@ html {
   color: #a9a9a9;
 }
 nav {
+  margin-right: 24px;
   margin-left: 24px;
 }
 
@@ -54,6 +55,7 @@ i {
 .CSSsurvol {
   color: gray;
   margin-right: 20px;
+  margin-left: 8px;
 }
 .CSSsurvol:hover {
   color: white;
@@ -77,6 +79,8 @@ main {
 
 hr {
   background-color: #282828;
+  margin-right: 7px;
+  margin-left: auto;
 }
 
 .playlistsList {

@@ -189,12 +189,3 @@ export type SpotifyRecentlyPlayed = {
   limit: number;
   href: string;
 };
-
-// <a href={item.track.href} key={item.track.id}>
-//   <Card className="m-1 bg-dark text-white" style={{ width: "12rem" }}>
-//     <Card.Img variant="top" src={item.track.album.images[0].url} />
-//     <Card.Body className="text-center">
-//       <Card.Title className="h6">{item.track.artists[0].name}</Card.Title>
-//     </Card.Body>
-//   </Card>
-// </a>;

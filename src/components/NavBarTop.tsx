@@ -12,7 +12,7 @@ export const NavBarTop: React.FC<Props> = ({ isLoggedIn, spotifyLoginUrl }) => {
   const user = data;
   return (
     <div className="d-flex justify-content-end navBarTop">
-      {isLoggedIn ? <p>Welcome {user && user.display_name}</p> : null}
+      {isLoggedIn ? <p> {user && user.display_name}</p> : null}
       <Link href={isLoggedIn ? "/api/logout" : spotifyLoginUrl}>
         <p>
           <span className="CSSsurvol">{isLoggedIn ? "Déconnexion" : "Connexion"}</span>
