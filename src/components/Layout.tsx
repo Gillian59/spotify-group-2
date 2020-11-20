@@ -12,6 +12,7 @@ type Props = {
   accessToken: string;
   isDisplay?: string;
   setIsDisplay?: any;
+  deviceId: string;
 };
 
 export const Layout: React.FC<Props> = ({
@@ -21,6 +22,7 @@ export const Layout: React.FC<Props> = ({
   isDisplay,
   setIsDisplay,
   accessToken,
+  deviceId,
 }) => {
   return (
     <>
@@ -36,7 +38,7 @@ export const Layout: React.FC<Props> = ({
       <NavBarTop isLoggedIn={isLoggedIn} spotifyLoginUrl={spotifyLoginUrl} />
       <main className="mr-5">
         {children}
-        {isDisplay === "home" && <Home accessToken={accessToken} />}
+        {isDisplay === "home" && <Home accessToken={accessToken} deviceId={deviceId} />}
         {isDisplay === "search" && <Search accessToken={accessToken} />}
         {isDisplay === "library" && <Library />}
       </main>

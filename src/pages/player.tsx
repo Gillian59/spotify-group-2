@@ -7,6 +7,7 @@ import React from "react";
 import { SpotifyState, SpotifyUser } from "../types/spotify";
 import { millisToMinutesAndSeconds } from "../utils/durationSong";
 import { play, pause, addToQueue, previous, next } from "../utils/player-service";
+import { uriSpotify } from "../components/Home";
 
 interface Props {
   user: SpotifyUser;
@@ -57,6 +58,7 @@ const Player: NextPage<Props> = ({ accessToken }) => {
       isDisplay={isDisplay}
       setIsDisplay={setIsDisplay}
       accessToken={accessToken}
+      deviceId={deviceId}
     >
       <footer id="playerFooter">
         <div className="container" id="songInformations">
@@ -95,7 +97,7 @@ const Player: NextPage<Props> = ({ accessToken }) => {
           <a
             className="buttons"
             onClick={() => {
-              paused ? play(accessToken, deviceId) : pause(accessToken, deviceId);
+              paused ? play(accessToken, deviceId, uriSpotify) : pause(accessToken, deviceId);
             }}
           >
             {paused ? <i className="fas fa-play"></i> : <i className="fas fa-pause"></i>}

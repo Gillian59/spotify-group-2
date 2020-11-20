@@ -10,7 +10,7 @@ html {
   padding-top: 24px;
   height: 100%;
   position: fixed;
-  color: gray;
+  color: #a9a9a9;
 }
 nav {
   margin-left: 24px;
@@ -83,4 +83,3 @@ hr {
   font-size: 13px;
   overflow: scroll;
 }
-

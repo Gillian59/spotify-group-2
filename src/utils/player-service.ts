@@ -1,11 +1,11 @@
-const play = (accessToken: string, deviceId: string): Promise<Response> => {
+const play = (accessToken: string, deviceId: string, uriSpotify: string): Promise<Response> => {
   return fetch(`https://api.spotify.com/v1/me/player/play?device_id=${deviceId}`, {
     method: "PUT",
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
     body: JSON.stringify({
-      uris: ["spotify:track:4uLU6hMCjMI75M1A2tKUQC"],
+      uris: [uriSpotify ? uriSpotify : "spotify:track:4uLU6hMCjMI75M1A2tKUQC"],
     }),
   });
 };
