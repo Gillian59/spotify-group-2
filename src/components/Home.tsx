@@ -19,7 +19,6 @@ export const Home: React.FC<Props> = ({ accessToken, deviceId }): JSX.Element =>
       .then((response) => response.json())
       .then((data) => {
         setRecentlyPlayed(data);
-        console.log(data);
       });
   }, []);
 

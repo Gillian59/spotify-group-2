@@ -61,63 +61,70 @@ const Player: NextPage<Props> = ({ accessToken }) => {
       deviceId={deviceId}
     >
       <footer id="playerFooter">
-        <div className="container" id="songInformations">
-          <img id="albcover" src={cover}></img>
-          <div className="posartinfos">
-            <p>{currentTrack}</p>
-            <p id="posnameart">{artistName}</p>
+        <div className="d-flex align-items-center w-100">
+          <div className="footer-right row">
+            <img id="albcover" src={cover} className="mr-3 ml-5"></img>
+            <div className="posartinfos">
+              <p className="mr-3">{currentTrack}</p>
+              <p className="mr-3" id="posnameart">
+                {artistName}
+              </p>
+            </div>
+            <p className="mr-4">{millisToMinutesAndSeconds(currentDuration)}</p>
+            <a
+              className="buttons"
+              onClick={() => {
+                addToQueue(accessToken, deviceId);
+              }}
+            >
+              <i className="far fa-plus-square"></i>{" "}
+            </a>
           </div>
-          <p>{millisToMinutesAndSeconds(currentDuration)}</p>
-          <a
-            className="buttons"
-            onClick={() => {
-              addToQueue(accessToken, deviceId);
-            }}
-          >
-            <i className="far fa-plus-square"></i>{" "}
-          </a>
-        </div>
-        <div className="container">
-          <a
-            className="buttons"
-            onClick={() => {
-              setShuffle(!shuffle);
-            }}
-          >
-            {!shuffle ? <i id="shuffleOff" className="fas fa-random"></i> : <i className="fas fa-random"></i>}
-          </a>
-          <a
-            className="buttons"
-            onClick={() => {
-              previous(accessToken, deviceId);
-            }}
-          >
-            <i className="fas fa-step-backward"></i>
-          </a>
-          <a
-            className="buttons"
-            onClick={() => {
-              paused ? play(accessToken, deviceId, uriSpotify) : pause(accessToken, deviceId);
-            }}
-          >
-            {paused ? <i className="fas fa-play"></i> : <i className="fas fa-pause"></i>}
-          </a>
-          <a
-            className="buttons"
-            onClick={() => {
-              next(accessToken, deviceId);
-            }}
-          >
-            <i className="fas fa-step-forward"></i>
-          </a>
-          <a
-            className="buttons"
-            onClick={() => {
-              repeatMode === 2 ? setRepeatMode(0) : setRepeatMode(repeatMode + 1);
-            }}
-          >
-            <i className="fas fa-redo"></i>: {repeatMode}
-          </a>
+          <div className="footer-center">
+            <a
+              className="buttons mr-4"
+              onClick={() => {
+                setShuffle(!shuffle);
+              }}
+            >
+              {!shuffle ? <i id="shuffleOff" className="fas fa-random"></i> : <i className="fas fa-random"></i>}
+            </a>
+            <a
+              className="buttons mr-4"
+              onClick={() => {
+                previous(accessToken, deviceId);
+              }}
+            >
+              <i className="fas fa-step-backward"></i>
+            </a>
+            <a
+              className="buttons mr-4"
+              onClick={() => {
+                paused ? play(accessToken, deviceId) : pause(accessToken, deviceId);
+              }}
+            >
+              {paused ? <i className="fas fa-play"></i> : <i className="fas fa-pause"></i>}
+            </a>
+            <a
+              className="buttons mr-4"
+              onClick={() => {
+                next(accessToken, deviceId);
+              }}
+            >
+              <i className="fas fa-step-forward"></i>
+            </a>
+            <a
+              className="buttons mr-4"
+              onClick={() => {
+                repeatMode === 2 ? setRepeatMode(0) : setRepeatMode(repeatMode + 1);
+              }}
+            >
+              <i className="fas fa-redo"></i> : {repeatMode}
+            </a>
+          </div>
+          <div className="footer-left">
+            <i className="fas fa-volume-up"></i>
+          </div>
         </div>
       </footer>
     </Layout>

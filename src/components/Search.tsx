@@ -14,9 +14,7 @@ export const Search: React.FC<Props> = ({ accessToken }) => {
     categorieAll(accessToken)
       .then((response) => response.json())
       .then((dataCategorie) => {
-        console.log("SEARCH[DATA]dataCategorie", dataCategorie);
         setCategory(dataCategorie);
-        console.log("SEARCH[DATA]category", category);
       });
   }, []);
 
@@ -27,14 +25,12 @@ export const Search: React.FC<Props> = ({ accessToken }) => {
         {category
           ? category.categories.items.map((item) => {
               return (
-                <a href={"/" + item.name} key={item.id}>
-                  <Card className="m-1 bg-dark text-white" style={{ width: "12rem", height: "18rem" }}>
-                    <Card.Img variant="top" src={item.icons[0].url} />
-                    <Card.Body className="text-center">
-                      <Card.Title className="h6">{item.name}</Card.Title>
-                    </Card.Body>
-                  </Card>
-                </a>
+                <Card key={item.id} className="m-1 bg-dark text-white" style={{ width: "12rem", height: "18rem" }}>
+                  <Card.Img variant="top" src={item.icons[0].url} />
+                  <Card.Body className="text-center">
+                    <Card.Title className="h6">{item.name}</Card.Title>
+                  </Card.Body>
+                </Card>
               );
             })
           : null}

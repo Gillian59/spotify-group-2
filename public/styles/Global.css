@@ -10,6 +10,7 @@ html {
   padding-top: 24px;
   height: 100%;
   position: fixed;
+  top: 0;
   color: #a9a9a9;
 }
 nav {
@@ -54,8 +55,10 @@ i {
 }
 .CSSsurvol {
   color: gray;
-  margin-right: 20px;
-  margin-left: 8px;
+  margin-right: 200px;
+}
+p .CSSsurvol {
+  margin-right: 250px;
 }
 .CSSsurvol:hover {
   color: white;
@@ -66,6 +69,8 @@ i {
 }
 main {
   margin-left: 232px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 .navBarTop {
   color: white;
@@ -75,6 +80,10 @@ main {
   font-size: 15px;
   cursor: pointer;
   padding-top: 18px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  margin-left: 232px;
 }
 
 hr {
