@@ -100,7 +100,7 @@ const Player: NextPage<Props> = ({ accessToken }) => {
             <a
               className="buttons mr-4"
               onClick={() => {
-                paused ? play(accessToken, deviceId) : pause(accessToken, deviceId);
+                paused ? play(accessToken, deviceId, uriSpotify) : pause(accessToken, deviceId);
               }}
             >
               {paused ? <i className="fas fa-play"></i> : <i className="fas fa-pause"></i>}

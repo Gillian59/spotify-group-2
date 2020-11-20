@@ -6,14 +6,20 @@ import { Layout } from "../components/Layout";
 type IndexProps = {
   spotifyLoginUrl: string;
   accessToken: string;
+  deviceId: string;
 };
 
-const Index: React.FC<IndexProps> = ({ spotifyLoginUrl, accessToken }) => {
+const Index: React.FC<IndexProps> = ({ spotifyLoginUrl, accessToken, deviceId }) => {
   const { data, error } = useSWR("/api/get-user-info");
   const user = data;
   if (error) console.log("INDEX error= ", error);
   return (
-    <Layout accessToken={accessToken} isLoggedIn={user !== undefined} spotifyLoginUrl={spotifyLoginUrl}>
+    <Layout
+      deviceId={deviceId}
+      accessToken={accessToken}
+      isLoggedIn={user !== undefined}
+      spotifyLoginUrl={spotifyLoginUrl}
+    >
       <h1>Home page</h1>
       <p>{user && user.display_name}</p>
     </Layout>
