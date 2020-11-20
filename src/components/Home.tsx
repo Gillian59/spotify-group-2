@@ -1,5 +1,4 @@
 import React from "react";
-//import Link from "next/link";
 import getRecentlyPlayed from "../utils/home-service";
 import { SpotifyRecentlyPlayed } from "../types/spotify.d";
 import Card from "react-bootstrap/Card";
