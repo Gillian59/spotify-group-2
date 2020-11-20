@@ -87,3 +87,11 @@ hr {
   font-size: 13px;
   overflow: scroll;
 }
+
+#trackName {
+  font-size: 14px;
+}
+
+#trackArtist {
+  font-size: 12px;
+}

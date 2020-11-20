@@ -43,8 +43,10 @@ export const Home: React.FC<Props> = ({ accessToken, deviceId }): JSX.Element =>
               >
                 <Card.Img variant="top" src={item.track.album.images[0].url} />
                 <Card.Body className="text-center">
-                  <Card.Title className="h6">{item.track.name}</Card.Title>
-                  <p>{item.track.artists[0].name}</p>
+                  <Card.Title id="trackName" className="h6">
+                    {item.track.name}
+                  </Card.Title>
+                  <p id="trackArtist">{item.track.artists[0].name}</p>
                 </Card.Body>
               </Card>
             );

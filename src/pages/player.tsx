@@ -116,7 +116,7 @@ const Player: NextPage<Props> = ({ accessToken }) => {
               repeatMode === 2 ? setRepeatMode(0) : setRepeatMode(repeatMode + 1);
             }}
           >
-            <i className="fas fa-redo"></i> : {repeatMode}
+            <i className="fas fa-redo"></i>: {repeatMode}
           </a>
         </div>
       </footer>
