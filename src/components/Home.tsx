@@ -31,6 +31,7 @@ export const Home: React.FC<Props> = ({ accessToken, deviceId }): JSX.Element =>
           recentlyPlayed.items.map((item, index) => {
             return (
               <Card
+                id="recentlyPlayedCard"
                 key={item.track.id + index}
                 className="m-1 bg-dark text-white"
                 style={{ width: "12rem", height: "21rem" }}

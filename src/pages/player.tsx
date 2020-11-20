@@ -87,7 +87,7 @@ const Player: NextPage<Props> = ({ accessToken }) => {
                 setShuffle(!shuffle);
               }}
             >
-              {!shuffle ? <i id="shuffleOff" className="fas fa-random"></i> : <i className="fas fa-random"></i>}
+              {!shuffle ? <i className="fas fa-random"></i> : <i id="shuffleOff" className="fas fa-random"></i>}
             </a>
             <a
               className="buttons mr-4"
